@@ -133,7 +133,7 @@ if g:kolor_bold==0
   if g:kolor_alternative_matchparen==0
     highlight MatchParen      guifg=#2e2c29    guibg=#ff5fd7    gui=none
   else
-    highlight MatchParen      guifg=#2e2c29    guibg=#9e9e9e    gui=none
+    highlight MatchParen      guifg=#2e2c29    guibg=NONE    gui=none
   endif
 else
   highlight ErrorMsg        guifg=#d96e8a    guibg=NONE       gui=bold
@@ -151,7 +151,8 @@ else
   if g:kolor_alternative_matchparen==0
     highlight MatchParen      guifg=#2e2c29    guibg=#ff5fd7    gui=bold
   else
-    highlight MatchParen      guifg=#2e2c29    guibg=#9e9e9e    gui=bold
+    highlight MatchParen      guifg=#2e2c29    guibg=NONE    gui=bold
+    " highlight MatchParen      guifg=#2e2c29    guibg=#9e9e9e    gui=bold
   endif
 endif
 if g:kolor_italic==0
@@ -230,7 +231,7 @@ if &t_Co > 255
     if g:kolor_alternative_matchparen==0
       highlight MatchParen      ctermfg=235     ctermbg=206     cterm=none
     else
-      highlight MatchParen      ctermfg=235     ctermbg=247     cterm=none
+      highlight MatchParen      ctermfg=254     ctermbg=235     cterm=none
     endif
   else
     highlight ErrorMsg        ctermfg=168     ctermbg=none    cterm=bold
@@ -248,7 +249,7 @@ if &t_Co > 255
     if g:kolor_alternative_matchparen==0
       highlight MatchParen      ctermfg=235     ctermbg=206     cterm=bold
     else
-      highlight MatchParen      ctermfg=235     ctermbg=247     cterm=bold
+      highlight MatchParen      ctermfg=254     ctermbg=235     cterm=bold
     endif
   endif
   if g:kolor_underlined==0
