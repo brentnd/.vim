@@ -28,6 +28,7 @@ set autoindent
 set number
 set showmatch
 set smartcase
+set expandtab
 
 " Color Schema
 
@@ -50,7 +51,7 @@ set hidden " Don't let me close buffers
 cmap w!! w !sudo tee % >/dev/null
 
 "Go
-au FileType go au BufWritePre <buffer> Fmt " Auto gofmt on write
+" au FileType go au BufWritePre <buffer> Fmt " Auto gofmt on write
 let g:SuperTabDefaultCompletionType = "context" " Use gocode 
 
 "Colors
