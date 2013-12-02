@@ -57,3 +57,6 @@ let g:SuperTabDefaultCompletionType = "context" " Use gocode
 
 "Colors
 
+"Syntastic Only use jshint
+let g:syntastic_javascript_checkers=['jshint']
+
