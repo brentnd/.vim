@@ -6,7 +6,7 @@ fail () {
 }
 SCRIPT=$0
 SCRIPTDIR=$(dirname -- "$SCRIPT")
-for i in $HOME/.{g,}vim{rc}; do
+for i in $HOME/.{g,}vim{rc,rc.local}; do
   if [ -f "$i" ] || [ -d "$i" ]; then
     echo "backing up $i to $i.bak"
     mv $i{,.bak} || fail "failed backup"
