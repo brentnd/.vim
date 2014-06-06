@@ -15,10 +15,10 @@ let mapleader=","
 map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
 nmap <F3> :NERDTreeToggle<CR>
 " Move around panes 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 set mousefocus
 
 " Tabs
@@ -59,4 +59,11 @@ let g:SuperTabDefaultCompletionType = "context" " Use gocode
 
 "Syntastic Only use jshint
 let g:syntastic_javascript_checkers=['jshint']
-
+" ~/.vimrc
+" " Make Vim recognize XTerm escape sequences for Page and Arrow
+" " keys combined with modifiers such as Shift, Control, and Alt.
+" " See http://www.reddit.com/r/vim/comments/1a29vk/_/c8tze8p
+"
+if &term =~ '256color'
+  set t_ut=
+endif
