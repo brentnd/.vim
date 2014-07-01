@@ -12,25 +12,45 @@
 "       It tries to preserve cursor position and avoids
 "       replacing the buffer with stderr output.
 "
+" Options:
+"
+"   g:go_fmt_commands [default=1]
+"
+"       Flag to indicate whether to enable the commands listed above.
+"
+"   g:gofmt_command [default="gofmt"]
+"
+"       Flag naming the gofmt executable to use.
+"
 if exists("b:did_ftplugin_go_fmt")
     finish
 endif
 
-if !exists("g:gocode_gofmt_tabs")
-    let g:gocode_gofmt_tabs = ' -tabs=' . (&expandtab ? 'false' : 'true')
+if !exists("g:go_fmt_commands")
+    let g:go_fmt_commands = 1
 endif
 
-if !exists("g:gocode_gofmt_tabwidth") && &expandtab
-    let g:gocode_gofmt_tabwidth = ' -tabwidth=' . &tabstop
+if g:go_fmt_commands
+    command! -buffer Fmt call s:GoFormat()
 endif
 
-command! -buffer Fmt call s:GoFormat()
-autocmd FileType go autocmd BufWritePre <buffer> :keepjumps Fmt " thanks @justinmk
+if !exists('g:go_fmt_autofmt')
+    let g:go_fmt_autofmt = 1
+endif
+
+if g:go_fmt_autofmt
+    " Run gofmt before saving file
+    autocmd BufWritePre <buffer> :keepjumps Fmt " thanks @justinmk
+endif
+
+if !exists("g:gofmt_command")
+    let g:gofmt_command = "gofmt"
+endif
 
 function! s:GoFormat()
     let view = winsaveview()
 
-    silent execute '%!gofmt' . g:gocode_gofmt_tabs . g:gocode_gofmt_tabwidth
+    silent execute "%!" . g:gofmt_command
 
     if v:shell_error
         let errors = []
@@ -57,4 +77,4 @@ endfunction
 
 let b:did_ftplugin_go_fmt = 1
 
-" vim:ts=4:sw=4:et
+" vim:sw=4:et

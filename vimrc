@@ -1,5 +1,4 @@
 
-
 " Pathogen
 filetype off " Pathogen needs to run before plugin indent on
 call pathogen#incubate()
@@ -29,6 +28,9 @@ set number
 set showmatch
 set smartcase
 set expandtab
+" spell
+setlocal spell spelllang=en_us
+
 
 " Color Schema
 
@@ -67,3 +69,50 @@ let g:syntastic_javascript_checkers=['jshint']
 if &term =~ '256color'
   set t_ut=
 endif
+
+
+"Tags
+set tags=./tags;tags;
+
+"Go tagbar
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+" Airline
+let g:airline_theme='bubblegum'
+let g:airline#extensions#whitespace#checks=[]
+let g:airline#extensions#tagbar#enabled = 1
+set laststatus=2
+
+
+" *** Tagbar
+nmap <F8> :TagbarToggle<CR>
+hi TagbarHighlight term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
+
+" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
