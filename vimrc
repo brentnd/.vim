@@ -9,6 +9,7 @@ filetype plugin indent on
 let mapleader=","
 
 
+
 "NerdTree
 
 map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -53,6 +54,10 @@ set completeopt+=longest
 set hidden " Don't let me close buffers
 cmap w!! w !sudo tee % >/dev/null
 
+" 110 vertical bar
+set colorcolumn=110
+highlight ColorColumn ctermbg=Gray
+
 "Go
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -78,6 +83,8 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+"C++ Completion
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 "Tags
 set tags=./tags;tags;
@@ -117,6 +124,12 @@ let g:airline#extensions#whitespace#checks=[]
 let g:airline#extensions#tagbar#enabled = 1
 set laststatus=2
 
+
+" YCM
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " *** Tagbar
 nmap <F8> :TagbarToggle<CR>
