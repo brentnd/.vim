@@ -44,6 +44,9 @@ let g:kolor_alternative_matchparen=1    " Gray 'MatchParen' color. Default: 0
 set term=xterm-256color
 colorscheme kolor
 
+" YCM
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 " Omni Completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
@@ -80,7 +83,7 @@ endif
 
 
 "Tags
-set tags=./tags;tags;
+set tags=./tags,./../tags,./../../tags,./../../../tags,tags
 
 "Go tagbar
 let g:tagbar_type_go = {
