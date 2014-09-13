@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/bpaluch/projects/gotut'
 let g:netrw_dirhist_2='/home/bpaluch/.vim'
 let g:netrw_dirhist_3='/home/bpaluch/projects/triangulation-go'
+let g:netrw_dirhist_4='/Users/bryanpaluch/projects/analytics/ducksboard'

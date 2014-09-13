@@ -1,0 +1,24 @@
+[submodule "bundle/cmake.vim-syntax"]
+	path = bundle/cmake.vim-syntax
+	url = https://github.com/vim-scripts/cmake.vim-syntax
+[submodule "bundle/cmake.vim"]
+	path = bundle/cmake.vim
+	url = https://github.com/jalcine/cmake.vim
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = https://github.com/benmills/vimux
+[submodule "bundle/vim-cmake-project"]
+	path = bundle/vim-cmake-project
+	url = https://github.com/sigidagi/vim-cmake-project
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline
