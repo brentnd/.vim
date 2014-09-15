@@ -47,6 +47,10 @@ colorscheme kolor
 
 " YCM
 let g:ycm_collect_identifiers_from_tags_files = 1
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+" Potentially unsafe
+let g:ycm_confirm_extra_conf = 0
 
 " Omni Completion
 filetype plugin on
