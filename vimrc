@@ -13,6 +13,7 @@ let mapleader=","
 "NerdTree
 
 map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
+map <leader>f :execute 'NERDTreeFind'<CR>
 nmap <F3> :NERDTreeToggle<CR>
 " Move around panes 
 nnoremap <C-J> <C-W><C-J>
@@ -62,7 +63,7 @@ set hidden " Don't let me close buffers
 cmap w!! w !sudo tee % >/dev/null
 
 " 110 vertical bar
-set colorcolumn=110
+set colorcolumn=120
 highlight ColorColumn ctermbg=Gray
 
 "Go
@@ -154,4 +155,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+
+"persistant local vim
+
+let g:localvimrc_persistent = 2
+
+"ctrlp stuff
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 
