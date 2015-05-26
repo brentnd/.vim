@@ -26,3 +26,5 @@ fi
 cd $HOME
 ln -s .vim/sourcerc .vimrc               || fail ".vimrc"
 
+cd $HOME/.vim
+./update_and_init_bundles.sh
