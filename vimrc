@@ -156,6 +156,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 "go stuff
 let g:go_highlight_functions = 1
+let g:go_highlight_types = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_snippet_case_type = "camelcase"
@@ -187,3 +188,7 @@ endfunction
 
 nnoremap <leader>6 :call PopulatePasteBufferFromOSX()<cr>
 nnoremap <leader>7 :call PropagatePasteBufferToOSX()<cr>
+
+
+nnoremap <leader>L :GoLint<cr>
+nnoremap <leader>R :GoRename<cr>
