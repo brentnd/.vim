@@ -192,3 +192,13 @@ nnoremap <leader>7 :call PropagatePasteBufferToOSX()<cr>
 
 nnoremap <leader>L :GoLint<cr>
 nnoremap <leader>R :GoRename<cr>
+
+function! Respace(var1, var2)
+  let fromSpace=a:var1
+  let toSpace=a:var2
+  exec ':set ts=' . fromSpace . ' sts=' . fromSpace .' noet'
+  retab!
+  exec ':set ts=' . toSpace  . ' sts=' . toSpace .' et'
+  retab
+endfunction
+
