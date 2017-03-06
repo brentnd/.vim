@@ -1,3 +1,7 @@
+set nocompatible
+"set pythondll="/usr/lib/x86_64-linux-gnu/libpython2.7.so"
+
+"set pythonthreedll="/usr/lib/x86_64-linux-gnu/libpython3.5m.so"
 
 " Pathogen
 filetype off " Pathogen needs to run before plugin indent on
@@ -99,34 +103,6 @@ au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 "Tags
 set tags=./tags,./../tags,./../../tags,./../../../tags,tags
 
-"Go tagbar
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
 
 " Airline
 let g:airline_theme='bubblegum'
