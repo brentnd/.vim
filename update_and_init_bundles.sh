@@ -9,7 +9,7 @@ git submodule foreach 'git fetch origin; git checkout $(git rev-parse --abbrev-r
 #update and build YouCompletMe
 cd bundle/YouCompleteMe
 git submodule update --init --recursive
-./install.sh --clang-completer --tern-completer
+./install.py --clang-completer --tern-completer
 echo "copying tern project file to ~"
-cp ./.tern-project ~/
+cp .tern-project ~/
 
