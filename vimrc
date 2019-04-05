@@ -34,6 +34,7 @@ set number
 set showmatch
 set smartcase
 set expandtab
+
 " spell
 setlocal spell spelllang=en_us
 
@@ -50,8 +51,6 @@ let g:kolor_alternative_matchparen=1    " Gray 'MatchParen' color. Default: 0
 set term=xterm-256color
 colorscheme kolor
 
-" YCM
-
 " Omni Completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
@@ -65,63 +64,24 @@ cmap w!! w !sudo tee % >/dev/null
 set colorcolumn=120
 highlight ColorColumn ctermbg=Gray
 
-"Go
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-
-
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-
-au FileType go nmap <leader>c <Plug>(go-coverlay) 
-au FileType go nmap <leader>C <Plug>(go-clearlay) 
-
-"Colors
+" Colors
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
-"Syntastic Only use jshint
-let g:syntastic_javascript_checkers=['jshint']
-" ~/.vimrc
-" " Make Vim recognize XTerm escape sequences for Page and Arrow
-" " keys combined with modifiers such as Shift, Control, and Alt.
-" " See http://www.reddit.com/r/vim/comments/1a29vk/_/c8tze8p
-"
 if &term =~ '256color'
   set t_ut=
 endif
 
-"C++ Completion
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-
 "Tags
 set tags=./tags,./../tags,./../../tags,./../../../tags,tags
-
 
 " Airline
 let g:airline_theme='bubblegum'
 let g:airline#extensions#whitespace#checks=[]
 let g:airline#extensions#tagbar#enabled = 1
 set laststatus=2
-
-
-" YCM
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_key_list_select_completion = ['<Tab>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-let g:ycm_server_keep_logfiles = 1
-
-let g:UltiSnipsExpandTrigger="<c-j>"
 
 " *** Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -130,15 +90,7 @@ hi TagbarHighlight term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 " Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-"go stuff
-let g:go_highlight_functions = 1
-let g:go_highlight_types = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_snippet_case_type = "camelcase"
-
 "persistant local vim
-
 let g:localvimrc_persistent = 2
 
 "ctrlp stuff
@@ -165,9 +117,6 @@ endfunction
 nnoremap <leader>6 :call PopulatePasteBufferFromOSX()<cr>
 nnoremap <leader>7 :call PropagatePasteBufferToOSX()<cr>
 
-
-nnoremap <leader>L :GoLint<cr>
-nnoremap <leader>R :GoRename<cr>
 
 function! Respace(var1, var2)
   let fromSpace=a:var1
