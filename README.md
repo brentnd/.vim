@@ -1,6 +1,11 @@
-.vim folder tuned for nodejs, go, c and c++ development. 
+# .vim
 
-clone and make to install
+Customized `.vim` folder tuned for development.
 
+## Install
 
-Most things will be installed with install.sh (Including youcompleteme)
+```sh
+git clone https://github.com/brentnd/.vim.git
+cd .vim
+./install.sh
+```
